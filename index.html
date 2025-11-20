@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>penghitungan tahun lahir</h1>
+    <label for="tahun">masukkan tahun lahir kamu</label>
+    <input type="number" id="tahun" placeholder="contoh:2005"/>
+    <button onclick="htiungumur()">hitung</button>
+    <p id="hasil"></p>
+    <script>
+      function htiungumur() {
+        let tahunlahir = document.getElementById("tahun").value;
+        let hasil = document.getElementById("hasil");
+        if (tahunlahir === "") {
+          hasil.innerHTML = "isi dulu woi";
+          hasil.style.color = "red";
+          return; 
+        }
+        let tahunsekarang = new Date().getFullYear();
+        let umur = tahunsekarang - tahunlahir;
+        hasil.innerHTML = "Umur kamu sekarang adalah " + umur + " tahun";
+        hasil.style.color = "black";
+      }
+    </script>
+  </body>
+</html>
