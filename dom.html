@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="judul">oiii</h1>
+    <button onclick="ubah()">klik disini</button>
+    <button onclick="ubahwarna()">klik disini</button>
+    <button onclick="ubahwarnapilihan()">klik disini</button>
+         <input type="color" id="warnapilihan" onchange="ubahwarnapilihan()">
+
+
+    <script>
+        const warna = ["pink","lightblue", "darkgreen", "darkred", "darkblue","black","white"];
+let indexwarna = 0;
+
+
+function ubahwarna() {
+    document.body.style.backgroundColor = warna[indexwarna];
+    indexwarna = (indexwarna + 1)% warna.length;
+}
+function ubahwarnapilihan(){
+    const warnadipilih = document.getElementById("warnapilihan").value;
+    document.body.style.backgroundColor = warnadipilih;
+}
+
+function ubah(){
+        let cek = document.getElementById("judul").innerHTML;
+
+        if (cek === "oiii"){
+            document.getElementById("judul").style.color = "#d61a9eff";
+            document.getElementById("judul").innerText = "totott";
+            document.getElementById("judul").style.background = "pink";
+        }
+        else {
+            document.getElementById("judul").style.background = "pink";
+            document.getElementById("judul").innerText = "oiii";
+            document.getElementById("judul").style.color = "#d61a9eff";
+        }
+           
+        }
+            document.getElementById("judul").style.background = "pink";
+            document.getElementById("judul").style.color = "#d61a9eff";
+    </script>
+</body>
+</html>
